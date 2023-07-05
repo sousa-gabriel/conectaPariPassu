@@ -9,7 +9,6 @@ export interface RobotoTextProps {
   align?: 'left' | 'center' | 'right'
   color?: string
   size?: '8xxSmall' | '10xSmall' | '12small' | '14medium' | '20large' | '24big'
-  lineHeight?: number
 }
 
 export interface RobotoTextStyledProps {
@@ -21,5 +20,4 @@ export interface RobotoTextStyledProps {
   marginBottom: number
   marginLeft: number
   marginRight: number
-  lineHeight: number
 }

@@ -1,5 +1,5 @@
 export interface ModalKnowMoreProps {
-  address: string
+  address?: string
   inscription?: string
   NF?: string
   images?: string[]

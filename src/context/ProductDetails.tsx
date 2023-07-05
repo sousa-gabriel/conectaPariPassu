@@ -27,9 +27,13 @@ interface IItemDestiny {
   descricao?: string
 }
 
-interface IDestiny {
-  origin: IItemDestiny
-  distributor: IItemDestiny
+export interface IPinItem {
+  idElo: number
+  nome: string
+  latitude: number
+  longitude: number
+  midias: string[]
+  descricao?: string
 }
 
 interface ProductContextData {
@@ -37,18 +41,19 @@ interface ProductContextData {
   details: IDetails
   origin: IItemDestiny[]
   distributor: IItemDestiny[]
+  listPinItem: IPinItem[]
   handleSearch: (search: string, isHome?: boolean) => void
 }
 
 const ProductContext = createContext({} as ProductContextData)
 
 function ProductProvider({ children }: ProductProps) {
+  const navigation = useNavigation()
   const [product, setProduct] = useState([] as any[])
   const [details, setDetails] = useState({} as IDetails)
-  const [destiny, setDestiny] = useState({} as IDestiny)
   const [origin, setOrigin] = useState([] as IItemDestiny[])
   const [distributor, setDistributor] = useState([] as IItemDestiny[])
-  const navigation = useNavigation()
+  const [listPinItem, setListPinItem] = useState([] as IPinItem[])
 
   function removeDuplication(arr) {
     const company = new Map()
@@ -64,13 +69,15 @@ function ProductProvider({ children }: ProductProps) {
   }
 
   async function handleSearch(search: string, isHome?: boolean) {
+    const originResponse = []
+    const distributorResponse = []
+    const pinItem = []
+
     await getTracking({ trackingCode: search })
       .then(async response => {
         const responseDetail = response.find(
           item => item.codigoRastreamento === search,
         )
-        const originResponse = []
-        const distributorResponse = []
 
         response.forEach(element => {
           element.elos.forEach(item => {
@@ -79,11 +86,13 @@ function ProductProvider({ children }: ProductProps) {
             } else {
               distributorResponse.push(item)
             }
+            pinItem.push(item)
           })
         })
 
         setOrigin(removeDuplication(originResponse))
         setDistributor(removeDuplication(distributorResponse))
+        setListPinItem(removeDuplication(pinItem))
 
         const detailResponse = {
           productName: responseDetail.produtos[0].nome,
@@ -118,6 +127,7 @@ function ProductProvider({ children }: ProductProps) {
         details,
         origin,
         distributor,
+        listPinItem,
         handleSearch,
       }}
     >

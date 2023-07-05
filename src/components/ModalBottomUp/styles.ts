@@ -8,12 +8,11 @@ export const Container = styled(Modal)`
   justify-content: flex-end;
 `
 
-export const Content = styled.View<contentModalProps>`
+export const Content = styled.ScrollView<contentModalProps>`
   flex: 1;
   background-color: ${({ theme }) => theme.colors.white};
   border-top-left-radius: ${normalize(20)}px;
   border-top-right-radius: ${normalize(20)}px;
   max-height: ${({ heightPercentage }) => heightPercentage ?? 70}%;
   padding: ${normalize(30)}px ${normalize(24)}px 0px ${normalize(24)}px;
-  align-items: center;
 `

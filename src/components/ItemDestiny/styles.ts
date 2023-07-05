@@ -9,6 +9,7 @@ export const Container = styled.TouchableOpacity`
   margin-bottom: ${normalize(10)}px;
 `
 export const Content = styled.View`
+  width: 90%;
   align-items: flex-start;
   margin-left: ${normalize(10)}px;
 `

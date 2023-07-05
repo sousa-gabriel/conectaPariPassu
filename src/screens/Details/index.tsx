@@ -39,7 +39,6 @@ export function Details() {
           size="14medium"
           value={details.productDescription}
           color={theme.colors.gray_500}
-          lineHeight={25}
         />
       </S.ScrollDetails>
     </S.Container>

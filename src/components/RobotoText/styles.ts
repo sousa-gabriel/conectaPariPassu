@@ -12,5 +12,4 @@ export const Text = styled.Text<RobotoTextStyledProps>`
   margin-bottom: ${({ marginBottom }) => normalize(marginBottom) || 0}px;
   margin-left: ${({ marginLeft }) => normalize(marginLeft) || 0}px;
   margin-right: ${({ marginRight }) => normalize(marginRight) || 0}px;
-  line-height: ${({ lineHeight }) => normalize(lineHeight) || 0}px;
 `

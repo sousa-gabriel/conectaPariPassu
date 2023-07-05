@@ -34,7 +34,7 @@ export function ItemDestiny({
       />
       <S.Content>
         <RobotoText
-          align="center"
+          align="left"
           font="bold"
           size="12small"
           value={nameCompany}
@@ -62,7 +62,7 @@ export function ItemDestiny({
           />
         }
         isVisible={modalVisible}
-        heightPercentage={70}
+        heightPercentage={80}
         handleClosed={() => setModalVisible(false)}
       />
     </S.Container>

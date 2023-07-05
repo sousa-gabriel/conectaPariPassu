@@ -7,8 +7,7 @@ import { RobotoText } from '../RobotoText'
 import { useProduct } from '../../context/ProductDetails'
 
 export function SearchCode({ isHome = false }: SearchCodeProps) {
-  // const [search, setSearch] = useState('DOF033YFG9XBNUUW')
-  const [search, setSearch] = useState('PRGEZHMPW74NYBOW')
+  const [search, setSearch] = useState('')
   const { handleSearch } = useProduct()
 
   return (

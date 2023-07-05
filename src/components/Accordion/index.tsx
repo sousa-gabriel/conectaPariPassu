@@ -7,7 +7,7 @@ import theme from '../../theme'
 import { normalize } from '../../theme/normalize'
 
 export const Accordion = ({ label, children, color }: AccordionProps) => {
-  const [childrenVisible, setChildrenVisible] = useState(false)
+  const [childrenVisible, setChildrenVisible] = useState(true)
 
   const handleChildrenVisible = () => {
     setChildrenVisible(!childrenVisible)

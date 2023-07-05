@@ -20,16 +20,17 @@ export default function App() {
     Roboto_700Bold,
   })
 
-  if (fontsLoaded) {
-    return (
-      <ThemeProvider theme={theme}>
-        <NavigationContainer ref={navigationRef}>
-          <Providers>
-            <Routes />
-          </Providers>
-        </NavigationContainer>
-      </ThemeProvider>
-    )
+  if (!fontsLoaded) {
+    return null
   }
-  return null
+
+  return (
+    <ThemeProvider theme={theme}>
+      <NavigationContainer ref={navigationRef}>
+        <Providers>
+          <Routes />
+        </Providers>
+      </NavigationContainer>
+    </ThemeProvider>
+  )
 }

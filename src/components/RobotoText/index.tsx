@@ -14,7 +14,6 @@ export function RobotoText({
   marginBottom,
   marginLeft,
   marginRight,
-  lineHeight,
 }: RobotoTextProps) {
   return (
     <S.Text
@@ -26,7 +25,6 @@ export function RobotoText({
       marginBottom={marginBottom}
       marginLeft={marginLeft}
       marginRight={marginRight}
-      lineHeight={lineHeight}
     >
       {value || children}
     </S.Text>
