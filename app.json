@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "conectaPariPassu",
+    "slug": "conectaPariPassu",
+    "version": "0.0.8",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
