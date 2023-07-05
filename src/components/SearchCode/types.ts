@@ -1,0 +1,3 @@
+interface SearchCodeProps {
+  isHome?: boolean
+}
